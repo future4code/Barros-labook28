@@ -20,6 +20,6 @@ connection
       )
    `)
    .then(() => {
-    console.log(`Tables created successfully!`)
+    console.log(`Tabelas criadas com sucesso!`)
 })
 .catch((error: any) => console.log(error.sqlMessage || error.message))
