@@ -15,17 +15,17 @@ export class UserBusiness {
       const { name, email, password } = input;
 
       if (!name || !email || !password) {
-        let message = `"name", "email" and "password" must be provided'`;
+        let message = `"name", "email" e "password" deve ser fornecidos!'`;
         throw new Error(message);
       }
       if (email.indexOf("@") === -1) {
-        throw new Error("Invalid email");
+        throw new Error("email inválido!");
       }
       if (password.length < 6) {
-        throw new Error("Password must be at least 6 characters");
+        throw new Error("A senha deve ter pelo menos 6 caracteres.");
       }
       if (name.length < 3) {
-        throw new Error("Name must be at least 3 characters");
+        throw new Error("O nome deve ter pelo menos 3 caracteres.");
       }
 
       const id: string = generateId();
@@ -43,15 +43,15 @@ export class UserBusiness {
       const { user_id, friend_id } = input;
 
       if (!user_id || !friend_id) {
-        throw new Error("user_id and friend_id must be provided");
+        throw new Error("user_id e friend_id devem ser fornecidos.");
       }
 
       if (user_id === friend_id) {
-        throw new Error("user_id and friend_id must be different");
+        throw new Error("user_id e friend_id devem ser diferentes.");
       }
 
       if (user_id.length !== 36 || friend_id.length !== 36) {
-        throw new Error("Invalid id");
+        throw new Error("id inválido, forneça um que seja válido.");
       }
 
       const id: string = generateId();
@@ -72,7 +72,7 @@ export class UserBusiness {
   async unFriend(id: string): Promise<void> {
     try {
       if (!id) {
-        throw new Error("Id must be provided");
+        throw new Error("Id deve ser fornecido.");
       }
 
       await userDatabase.unFriend(id);
@@ -85,11 +85,11 @@ export class UserBusiness {
   async getFeedByFriends(id: string): Promise<post[]> {
     try {
       if (!id) {
-        throw new Error("Id must be provided");
+        throw new Error("Id deve ser fornecido.");
       }
 
       if (id.length !== 36) {
-        throw new Error("Invalid id");
+        throw new Error("id inválido, forneça um que seja válido.");
       }
 
       return await userDatabase.getFeedByFriends(id);

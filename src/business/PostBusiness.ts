@@ -13,12 +13,12 @@ export class PostBusiness {
 
       if (!photo || !description || !type || !author_id) {
         throw new Error(
-          `"photo", "description", "type", "created_at" and "author_id" must be provided'`
+          `"photo", "description", "type", e "author_id" devem ser fornecidos'`
         );
       }
       
       if (type !== "normal" && type !== "event") {
-        throw new Error("Type must be 'normal' or 'evento'");
+        throw new Error("O tipo deve ser 'normal' ou 'event'");
       }
 
       const id: string = generateId();
@@ -44,7 +44,7 @@ export class PostBusiness {
       const posts = await postDatabase.getPostById(id)
 
       if (!posts) {
-        throw new Error("Post not found");
+        throw new Error("Postagem não encontrada.");
       }
 
       return posts
@@ -57,11 +57,11 @@ export class PostBusiness {
  async getPostsByType(type: string): Promise<post[]> {
   try {
     if (!type) {
-      throw new Error("Type must be provided");
+      throw new Error("O tipo deve ser fornecido!");
     }
 
     if (type !== "normal" && type !== "event") {
-      throw new Error("Type must be 'normal' or 'evento'");
+      throw new Error("O tipo deve ser 'normal' ou 'event'");
     }
 
     return await postDatabase.getPostsByType(type);
@@ -75,11 +75,11 @@ async likePost(input: LikeInputDTO): Promise<any> {
       const { user_id, post_id } = input;
 
       if (!user_id || !post_id) {
-        throw new Error("user_id and post_id must be provided");
+        throw new Error("user_id e post_id devem ser fornecidos!");
       }
 
       if (user_id.length !== 36 || post_id.length !== 36) {
-        throw new Error("Invalid id");
+        throw new Error("id inválido, forneça um que seja válido.");
       }
 
       const id: string = generateId();
@@ -99,7 +99,7 @@ async likePost(input: LikeInputDTO): Promise<any> {
   async unlikePost(id: string): Promise<void> {
     try {
       if (!id) {
-        throw new Error("Id must be provided");
+        throw new Error("Id deve ser fornecido!");
       }
 
       await postDatabase.unlikePost(id);
@@ -113,11 +113,11 @@ async likePost(input: LikeInputDTO): Promise<any> {
       const { user_id, post_id, comment } = input;
 
       if (!user_id || !post_id || !comment) {
-        throw new Error("user_id, post_id and comment must be provided");
+        throw new Error("user_id, post_id e comment devem ser fornecidos.");
       }
 
       if (user_id.length !== 36 || post_id.length !== 36) {
-        throw new Error("Invalid id");
+        throw new Error("id inválido, forneça um que seja válido.");
       }
 
       const id: string = generateId();

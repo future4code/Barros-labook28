@@ -15,7 +15,7 @@ export class UserController {
 
       await userBusiness.createUser(input);
 
-      res.status(201).send({ message: "Success!", input });
+      res.status(201).send({ message: "Deu Certo!", input });
     } catch (error: any) {
       res.status(400).send({ message: error.message });
     }
@@ -30,7 +30,7 @@ export class UserController {
 
       await userBusiness.makeFriends(input);
       
-      res.status(201).send({ message: "Success!", input });
+      res.status(201).send({ message: "Deu Certo!", input });
     } catch (error: any) {
       res
         .status(error.statusCode || 400)
@@ -42,7 +42,7 @@ export class UserController {
     try {
       await userBusiness.unFriend(req.params.id);
 
-      res.status(201).send({ message: "Success!" });
+      res.status(201).send({ message: "Deu Certo!" });
     } catch (error: any) {
       res
         .status(error.statusCode || 400)
