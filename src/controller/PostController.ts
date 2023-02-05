@@ -16,7 +16,7 @@ export class PostController {
 
         await postBusiness.createPost(input);
 
-      res.status(201).send({ message: "Success!", input });
+      res.status(201).send({ message: "Deu Certo!", input });
     } catch (error: any) {
       res
         .status(error.statusCode || 400)
@@ -58,7 +58,7 @@ export class PostController {
         post_id: req.body.post_id,
       };
       await postBusiness.likePost(input);
-      res.status(201).send({ message: "Success!", input });
+      res.status(201).send({ message: "Deu Certo!", input });
     } catch (error: any) {
       res
         .status(error.statusCode || 400)
@@ -69,7 +69,7 @@ export class PostController {
   async unlikePost(req: Request, res: Response) {
     try {
       await postBusiness.unlikePost(req.params.id);
-      res.status(201).send({ message: "Success!" });
+      res.status(201).send({ message: "Deu Certo!" });
     } catch (error: any) {
       res
         .status(error.statusCode || 400)
@@ -85,7 +85,7 @@ export class PostController {
         comment: req.body.comment,
       };
       await postBusiness.commentPost(input);
-      res.status(201).send({ message: "Success!", input });
+      res.status(201).send({ message: "Deu Certo!", input });
     } catch (error: any) {
       res
         .status(error.statusCode || 400)

@@ -12,9 +12,9 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name": "Amendoim Pereira",
-    "email": "amendoim@pereira.com",
-    "password": "13131133"
+    "name": "Lara Croft",
+    "email": "lara@croft.com",
+    "password": "32156788"
 }
 
 ### Criar post
@@ -25,7 +25,7 @@ Content-Type: application/json
   "photo": "https://neilpatel.com/wp-content/uploads/2016/04/outdoor-photo.jpg",
   "description": "Post Test",
   "type": "event",
-  "author_id": "db145999-2691-481d-b74b-fb6d9ad113e1"
+  "author_id": "780fb271-ad82-45f0-a2f6-669ff632a7d3"
 }
 
 ### Fazer Amizade
@@ -33,8 +33,8 @@ POST http://localhost:3003/user/friend/
 Content-Type: application/json
 
 {
-  "user_id": "db145999-2691-481d-b74b-fb6d9ad113e1",
-  "friend_id": "4f1f37e0-70c3-49e5-a76d-945e89771a96"
+  "user_id": "780fb271-ad82-45f0-a2f6-669ff632a7d3",
+  "friend_id": "7868bea0-84a3-4f89-beba-a58d739e6563"
 }
 
 ### Curtir o Post
@@ -42,8 +42,8 @@ POST http://localhost:3003/post/like/
 Content-Type: application/json
 
 {
-  "user_id": "d53604cd-1ad9-4cf4-8556-8ee80349b1bb",
-  "post_id": "0af7f49d-a214-460e-a129-d2e0f9a4fc58"
+  "user_id": "780fb271-ad82-45f0-a2f6-669ff632a7d3",
+  "post_id": "8eafd487-69bb-42fb-96c9-729f6fc43b6e"
 }
 
 ### Comentar Um Post
@@ -51,9 +51,9 @@ POST http://localhost:3003/post/comment/
 Content-Type: application/json
 
 {
-  "user_id": "4f1f37e0-70c3-49e5-a76d-945e89771a96",
-  "post_id": "71b8d1cf-1fef-4f4e-939d-0a5e26aef985",
-  "comment": "Teste2"
+  "user_id": "7868bea0-84a3-4f89-beba-a58d739e6563",
+  "post_id": "8eafd487-69bb-42fb-96c9-729f6fc43b6e",
+  "comment": "Comentário teste"
 }
 
 ### Desfazer um Like
