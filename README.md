@@ -8,7 +8,7 @@ O LaBook será uma rede social com o objetivo de promover a conexão e interaç�
 ---
 ## 📖 Documentação 
 
-<a href=https://documenter.getpostman.com/view/22376367/2s8YzL3kWw>Clica em mim</a>
+<a href=https://documenter.getpostman.com/view/22376367/2s935oM4Wx>Clica em mim</a>
 
 ## 📚 Deploy no Render
 
