@@ -12,7 +12,7 @@ O LaBook será uma rede social com o objetivo de promover a conexão e interaç�
 
 ## 📚 Deploy no Render
 
-<a href=https://revisao-backend-mod5.onrender.com>Olha eu aqui</a>
+<a href=https://labook28.onrender.com>Olha eu aqui</a>
 
 ## 🛠️ Tecnologias
 
