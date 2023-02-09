@@ -1,0 +1,63 @@
+### Receber Postagens de Amigos
+GET http://localhost:3003/user/feed/0259cc70-a94a-49e2-97d0-bfe478c2d941
+
+### Obter Postagens Por Type
+GET http://localhost:3003/post/type/normal
+
+### Receber Postagem Por id
+GET http://localhost:3003/post/71b8d1cf-1fef-4f4e-939d-0a5e26aef
+
+#### Cadastrar Usuário
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Lara Croft",
+    "email": "lara@croft.com",
+    "password": "32156788"
+}
+
+### Criar post
+POST http://localhost:3003/post/create
+Content-Type: application/json
+
+{
+  "photo": "https://neilpatel.com/wp-content/uploads/2016/04/outdoor-photo.jpg",
+  "description": "Post Test",
+  "type": "event",
+  "author_id": "780fb271-ad82-45f0-a2f6-669ff632a7d3"
+}
+
+### Fazer Amizade
+POST http://localhost:3003/user/friend/
+Content-Type: application/json
+
+{
+  "user_id": "780fb271-ad82-45f0-a2f6-669ff632a7d3",
+  "friend_id": "7868bea0-84a3-4f89-beba-a58d739e6563"
+}
+
+### Curtir o Post
+POST http://localhost:3003/post/like/
+Content-Type: application/json
+
+{
+  "user_id": "780fb271-ad82-45f0-a2f6-669ff632a7d3",
+  "post_id": "8eafd487-69bb-42fb-96c9-729f6fc43b6e"
+}
+
+### Comentar Um Post
+POST http://localhost:3003/post/comment/
+Content-Type: application/json
+
+{
+  "user_id": "7868bea0-84a3-4f89-beba-a58d739e6563",
+  "post_id": "8eafd487-69bb-42fb-96c9-729f6fc43b6e",
+  "comment": "Comentário teste"
+}
+
+### Desfazer um Like
+DELETE http://localhost:3003/post/deslike/0f889526-425f-479b-bbd2-0b52ba2b94a4
+
+### Desfazer Amizade
+DELETE http://localhost:3003/user/friend/e8001d46-7d8f-4ccd-b831-4d83ead5906e
